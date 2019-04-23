@@ -13,7 +13,7 @@
 <bean id="studentService" class="org.lanqiao.service.impl.StudentServiceImpl">
 
 <property name="studentMapper" ref="studentMapper"></property>
-
+                           <!--！！！ 这里的ref的值，是首字母小写的接口名    --> 
 </bean>
 	
 	
@@ -42,6 +42,7 @@
 <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
       <property name="dataSource" ref="dataSource"></property>
       <!-- 加载Mapper.xml路径 -->
+      <!-- 普通java项目不需要加classpath   web项目需要加classpath -->
       <property name="mapperLocations" value="classpath:org/lanqiao/mapper/*.xml"></property>
 
 </bean>
